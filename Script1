@@ -1,0 +1,23 @@
+import csv
+
+from sqlalchemy.engine import row
+
+file_csv = "test.csv"
+data_csv = open(file_csv)
+print(type(data_csv))
+#print(data_csv.read())
+open_csv= open(file_csv)
+python_csv = csv.reader(open_csv)
+print (type(python_csv))
+#for i in data_csv:
+#     print(i)
+# data_csv.close()
+for i in python_csv:
+     print("{Switch} support {Server} and connect to {Link} using {VLAN} and {Interface}.".format(
+         Switch = row[0],
+         Server = row[1],
+         Link = row[3],
+         VLAN = row[4],
+         Interface = row[5])
+     )
+#python_csv.close()
