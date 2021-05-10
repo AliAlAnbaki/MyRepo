@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+ #! /usr/bin/env python
 """
 Script to create network config by using CSV files with Jinja templates.
 """
@@ -8,8 +8,8 @@ from jinja2 import Template
 
 
 # Assign var to CSV file and J2 file
-source_file = "switch-ports.csv"
-interface_template_file = "switchport-interface-template.j2"
+source_file = "ports.csv"
+interface_template_file = "config_template.j2"
 
 # place holder for full configuration
 interface_configs = ""
