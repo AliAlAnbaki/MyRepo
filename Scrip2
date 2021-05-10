@@ -1,18 +1,18 @@
 #! /usr/bin/env python
 """
-Demo script showing how to create network configurations by combining data from CSV files with Jinja templates.
+script showing how to create network configurations by combining data from CSV files with Jinja templates.
 """
 
 import csv
 from jinja2 import Template
 from netmiko import ConnectHandler
 
-source_file = "switch-ports1.csv"
-interface_template_file = "switchport-interface-template.j2"
+source_file = "ports.csv"
+interface_template_file = "config_template.j2"
 
-# DevNet Sandbox Nexus 9000 switch to send configuration to
+# Sandbox Nexus 9000 switch to send configuration or you can use any switch has connectvity
 device = {
-             "address": "sbx-nxos-mgmt.cisco.com",
+             "address": "sbx-nxos-mgmt.cisco.com",#hostname or ip addrees of switch
              "device_type": "cisco_nxos",
              "ssh_port": 8181,
              "username": "admin",
@@ -20,18 +20,18 @@ device = {
             }
 
 
-# String that will hold final full configuration of all interfaces
+#  place holder for full configuration
 interface_configs = ""
 
-# Open up the Jinja template file (as text) and then create a Jinja Template Object
+# Open the J2 file  and create a J2 Object
 with open(interface_template_file) as f:
     interface_template = Template(f.read(), keep_trailing_newline=True)
 
 # Open up the CSV file containing the data
 with open(source_file) as f:
-    # Use DictReader to access data from CSV
+# Use DictReader to access data from CSV
     reader = csv.DictReader(f)
-    # For each row in the CSV, generate an interface configuration using the jinja template
+# For each row in the CSV, generate an interface configuration using the jinja template
     for row in reader:
         interface_config = interface_template.render(
             interface = row["Interface"],
@@ -41,7 +41,7 @@ with open(source_file) as f:
             purpose = row["Purpose"]
         )
 
-        # Append this interface configuration to the full configuration
+ # Append this interface configuration to the full configuration
         interface_configs += interface_config
 
 ## Save the final configuraiton to a file
