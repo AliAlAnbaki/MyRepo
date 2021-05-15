@@ -1,13 +1,13 @@
 Switch,Interface,Server,Link,Purpose,VLAN
-sbx-n9kv-ao,Ethernet1/15,esxi-01,nic 0,Host1,trunk
-sbx-n9kv-ao,Ethernet1/16,esxi-01,nic 1,Host2,trunk
-sbx-n9kv-ao,Ethernet1/17,esxi-01,nic 2,Host3,trunk
-sbx-n9kv-ao,Ethernet1/18,esxi-01,nic 3,Host4,trunk
+sbx-n9kv-ao,Ethernet1/15,esxi-01,nic 1,Host1,trunk
+sbx-n9kv-ao,Ethernet1/16,esxi-01,nic 2,Host2,trunk
+sbx-n9kv-ao,Ethernet1/17,esxi-01,nic 3,Host3,trunk
+sbx-n9kv-ao,Ethernet1/18,esxi-01,nic 4,Host4,trunk
 sbx-n9kv-ao,Ethernet1/19,db-01,nic 0,Database Server1,100
-sbx-n9kv-ao,Ethernet1/20,db-01,nic 1,Database Server2,100
-sbx-n9kv-ao,Ethernet1/21,dev-db-01,nic 0,Database Server1,101
-sbx-n9kv-ao,Ethernet1/22,dev-db-01,nic 1,Database Server2,101
-sbx-n9kv-ao,Ethernet1/23,admin-01,nic 0,Admin Server1,102
-sbx-n9kv-ao,Ethernet1/24,admin-01,nic 2,Admin Server2,102
-sbx-n9kv-ao,Ethernet1/25,server-01,nic 0,App Server1,103
-sbx-n9kv-ao,Ethernet1/26,server-01,nic 1,App Server2,103
+sbx-n9kv-ao,Ethernet1/20,db-01,nic 1,Database Server2,101
+sbx-n9kv-ao,Ethernet1/21,dev-db-01,nic 1,Database Server1,102
+sbx-n9kv-ao,Ethernet1/22,dev-db-01,nic 2,Database Server2,103
+sbx-n9kv-ao,Ethernet1/23,admin-01,nic 1,Admin Server1,104
+sbx-n9kv-ao,Ethernet1/24,admin-01,nic 2,Admin Server2,105
+sbx-n9kv-ao,Ethernet1/25,server-01,nic 1,App Server1,106
+sbx-n9kv-ao,Ethernet1/26,server-01,nic 2,App Server2,107
