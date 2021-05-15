@@ -7,7 +7,7 @@ import yaml
 import jinja2
 generate_config =''
 
-yaml_file = "exercise3b.yml"
+yaml_file = "vlan.yml"
 with open(yaml_file) as f:
     template_vars = yaml.load(f)
 #print(template_vars)
