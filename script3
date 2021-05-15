@@ -1,0 +1,24 @@
+"""
+Take the YAML file and corresponding data structure 
+From this YAML data input source, use Jinja templating to generate configuration
+
+----
+import yaml
+import jinja2
+generate_config =''
+
+yaml_file = "exercise3b.yml"
+with open(yaml_file) as f:
+    template_vars = yaml.load(f)
+#print(template_vars)
+
+template_file = "interface_config.j2"
+with open(template_file) as f:
+    jinja_template = f.read()
+#print(jinja_template)
+
+template = jinja2.Template(jinja_template)
+generate_config = template.render(template_vars)
+with open("generate_config.txt", "w") as f:
+    f.write(generate_config)
+#print(template.render(template_vars))
