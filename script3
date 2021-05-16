@@ -3,6 +3,7 @@ Take the YAML file and corresponding data structure
 From this YAML data input source, use Jinja templating to generate configuration
 
 ----
+"""
 import yaml
 import jinja2
 generate_config =''
