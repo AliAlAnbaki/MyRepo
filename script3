@@ -2,6 +2,23 @@
 Take the YAML file and corresponding data structure 
 From this YAML data input source, use Jinja templating to generate configuration 
 
+Exppected output 
+-------------------
+interface Ethernet10
+  switchport mode access
+  description "ACCESS PORT"
+  switchport access vlan 10
+  !
+interface Ethernet20
+  switchport mode access
+  description "ACCESS PORT"
+  switchport access vlan 20
+  !
+interface Ethernet30
+  switchport mode trunk
+  description "Trunk PORT"
+  switchport trunk native vlan 1
+  switchport trunk allowed vlan all
 ----
 """
 import yaml
