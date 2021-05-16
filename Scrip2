@@ -21,7 +21,7 @@ device = {
 
 
 #  place holder for full configuration
-interface_configs = ""
+interface_configs2 = ""
 
 # Open the J2 file  and create a J2 Object
 with open(interface_template_file) as f:
@@ -42,11 +42,11 @@ with open(source_file) as f:
         )
 
  # Append this interface configuration to the full configuration
-        interface_configs += interface_config
+        interface_configs2 += interface_config
 
 ## Save the final configuraiton to a file
-with open("interface_configs.txt", "w") as f:
-    f.write(interface_configs)
+with open("interface_configs2.txt", "w") as f:
+    f.write(interface_configs2)
 
 # Use Netmiko to connect to the device and send the configuration
 with ConnectHandler(ip = device["address"],
@@ -55,6 +55,6 @@ with ConnectHandler(ip = device["address"],
                     password = device["password"],
                     device_type = device["device_type"]) as ch:
 
-    config_set = interface_configs.split("\n")
+    config_set = interface_configs2.split("\n")
     output = ch.send_config_set(config_set)
     print(output)
