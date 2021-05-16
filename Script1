@@ -1,6 +1,120 @@
  #! /usr/bin/env python
 """
 Script to create network config by using CSV files with Jinja templates.
+Expected OUtput
+------------------------
+!
+interface Ethernet1/15
+  description Link to esxi-01 port nic 0 for Host1
+  switchport
+  switchport mode trunk
+  no shutdown
+  
+
+!
+interface Ethernet1/16
+  description Link to esxi-01 port nic 1 for Host2
+  switchport
+  switchport mode trunk
+  no shutdown
+  
+
+!
+interface Ethernet1/17
+  description Link to esxi-01 port nic 2 for Host3
+  switchport
+  switchport mode trunk
+  no shutdown
+  
+
+!
+interface Ethernet1/18
+  description Link to esxi-01 port nic 3 for Host4
+  switchport
+  switchport mode trunk
+  no shutdown
+  
+
+!
+interface Ethernet1/19
+  description Link to db-01 port nic 0 for Database Server1
+  switchport
+  switchport mode access
+  switchport access vlan 100
+  spanning-tree port type edge
+  no shutdown
+  
+
+!
+interface Ethernet1/20
+  description Link to db-01 port nic 1 for Database Server2
+  switchport
+  switchport mode access
+  switchport access vlan 100
+  spanning-tree port type edge
+  no shutdown
+  
+
+!
+interface Ethernet1/21
+  description Link to dev-db-01 port nic 0 for Database Server1
+  switchport
+  switchport mode access
+  switchport access vlan 101
+  spanning-tree port type edge
+  no shutdown
+  
+
+!
+interface Ethernet1/22
+  description Link to dev-db-01 port nic 1 for Database Server2
+  switchport
+  switchport mode access
+  switchport access vlan 101
+  spanning-tree port type edge
+  no shutdown
+  
+
+!
+interface Ethernet1/23
+  description Link to admin-01 port nic 0 for Admin Server1
+  switchport
+  switchport mode access
+  switchport access vlan 102
+  spanning-tree port type edge
+  no shutdown
+  
+
+!
+interface Ethernet1/24
+  description Link to admin-01 port nic 2 for Admin Server2
+  switchport
+  switchport mode access
+  switchport access vlan 102
+  spanning-tree port type edge
+  no shutdown
+  
+
+!
+interface Ethernet1/25
+  description Link to server-01 port nic 0 for App Server1
+  switchport
+  switchport mode access
+  switchport access vlan 103
+  spanning-tree port type edge
+  no shutdown
+  
+
+!
+interface Ethernet1/26
+  description Link to server-01 port nic 1 for App Server2
+  switchport
+  switchport mode access
+  switchport access vlan 103
+  spanning-tree port type edge
+  no shutdown
+  
+
 """
 # importing modules
 import csv
