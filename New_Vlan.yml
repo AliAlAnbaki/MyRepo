@@ -1,0 +1,14 @@
+---
+interfaces:
+  Ethernet10:
+    mode: access
+    vlan: 10
+  Ethernet20:
+    server: access
+    purpose: 10
+    mode: access
+    vlan: 20
+  Ethernet30:
+    mode: trunk
+    native_vlan: 1
+    trunk_vlans: all
