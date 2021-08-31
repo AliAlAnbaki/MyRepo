@@ -2,7 +2,7 @@
 interfaces:
   Ethernet10:
     mode: access
-    vlan: 10
+    vlan: 40
   Ethernet20:
     server: access
     purpose: 10
