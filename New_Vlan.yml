@@ -3,11 +3,11 @@ interfaces:
   Ethernet10:
     mode: access
     vlan: 10
-  Ethernet20:
+  Ethernet80:
     server: access
     purpose: 10
     mode: access
-    vlan: 60
+    vlan: 6550
   Ethernet30:
     mode: trunk
     native_vlan: 1
